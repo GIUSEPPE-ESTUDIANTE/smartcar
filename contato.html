@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+
+</head>
+<style>
+
+</style>
+
+
+
+
+
+<body>
+
+    <header>
+        <div class="limitador">
+            <h1><a href="index.html">Inicio</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu ">
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="publico.html">Publico alvo</a></li>
+                    <li> <a href="preco.html">Preços</a></li>
+                    <li> <a href="sobre.html">Produtos</a></li>
+                    <li> <a href="contato.html">Pedido</a></li>
+                    <li> <a href="duvida.html">Feedback</a></li>
+                    <button onclick="logout()">Sair</button>
+    
+    <script>
+
+
+        // Sair do Login da Pagina pedido 
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            alert("Você saiu da conta!");
+            window.location.href = "login.html";
+        }
+
+
+        
+    </script>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <article class="limitador conteudo">
+            <h2 class="contato">Pedido</h2>
+            <p>Dados do Cliente</p>
+
+            <form action="https://formspree.io/f/mwkdyrbl" method="post" autocomplete="off">
+                <div>
+                    <!-- Nome -->
+                    <label for="">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <div>
+                <!-- e-mail -->
+                <label for="e-mail">E-mail:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+                
+
+                    <!-- data de nascimento -->
+
+                    <div>
+                        <label for="nascimento">Data de Nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento">
+                    </div>
+
+
+
+
+                    
+<div>
+    <label for="cep">CEP: <br><span id="status"></span></label>
+    <div id="area-do-cep">
+        <input placeholder="Somente números" type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" required> <br>
+        <button id="buscar">Buscar</button>
+    </div>
+</div>
+<div>
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" size="30">
+</div>
+<div>
+    <label for="bairro">Bairro:</label>
+    <input  readonly type="text" id="bairro" name="bairro">
+</div>
+<div>
+    <label for="cidade">Cidade:</label>
+    <input readonly type="text" id="cidade" name="cidade">
+</div>
+<div>
+    <label for="estado">Estado:</label>
+    <input readonly type="text" id="estado" name="estado">
+</div>
+<!-- /FIM HTML PARA CEP/ENDEREÇO --> 
+
+
+                    <!-- telefone -->
+
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone">
+                    </div>
+                   
+                    <div>
+                        <label for="pedido">Escolhe numero do produto  1-4</label>
+                        <select name="pedido" id="pedido">
+                            <!-- Deixe um option vazio
+                            de proposito -->
+                            <option value=""></option>
+                            <option>Smartcar Sense</option>
+                            <option>SmartCar Versão Obras</option>
+                            <option>SmartCar Plus</option>
+                            <option>SmartCar Exclusive</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Criação da cores-->
+                    <div>
+                        <label for="cor">Escolhe cor</label>
+                        <select name="cor" id="cor">
+                           >
+                            <option value=""></option>
+                            <option>Preto</option>
+                            <option>Cinza</option>
+                            <option>Chumbo</option>
+                            <option>Amarelo</option>
+                            <option>Vermelho</option>
+                        </select>
+                    </div>
+                    
+            
+                    
+
+
+
+
+                    <div>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+
+                    </div> 
+
+                    
+
+                    <button type="button" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
+
+<script>
+    function irParaPagamento() {
+        window.location.href = "pagamento.html"; // Redireciona diretamente
+    }
+</script>
+                    
+                    
+            
+
+
+
+
+
+            </form>
+            <p id="my-form-status"> </p>
+
+        </article>
+
+
+    </main>
+
+    <footer>
+        <div id ="social">
+            <a href="https://www.youtube.com/" target="_blank"><img src="imagens/youtube.png" alt="youtube"/></a>
+            <a href="https://br.linkedin.com/?mcid=6821526239111716925&src=go-pa&trk=sem-ga_campid.12619604099_asid.149519181115_crid.725790844702_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.9196420&cid=&gad_source=1&gclid=Cj0KCQjwhr6_BhD4ARIsAH1YdjBJj7oe1TR3Jq5Kp2SmPQMWQveLjLj2agu_0HNhaha10Wcv45ry-t4aAkdUEALw_wcB&gclsrc=aw.ds" target="_blank"><img src="imagens/linkedin.png" alt="linkedin"/></a>
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><img src="imagens/facebook.png" alt="facebook"/></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="imagens/instagram.png" alt="instagram"/></a>
+            <a href="https://x.com/?lang=pt" target="_blank"><img src="imagens/twitter.png" alt="x"/></a><br>
+        </div>
+
+
+
+        <br><p>Automóveis é um site Projeto Educacional,
+            para conhecimento sobre o carro e as suas origens <br> <br> &copy;  
+            
+             <b>Ana Beatriz de Brito Souza</b><br>
+             &copy; <b>Giuseppe Costa Strapaicci</b><br>
+             &copy; <b>Luan Zerbinatti Santos Fonseca</b><br>
+            &copy; <b>Paulo Sérgio Hernades Teles de Andrade</b><br>
+            
+             <time>2025</time> </p>
+
+
+    </footer>
+
+
+    
+
+
+    <script>
+        // Verifica se o usuário está logado
+        let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    
+        if (!usuarioLogado) {
+            alert("Você precisa estar logado para acessar esta página!");
+            window.location.href = "login.html";
+        }
+    </script>
+    
+    
+    
+    
+    <!-- importaçâo da biblioteca jQuery -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<!-- importaçâo do plugin/extensâo jQuery Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script src="js/menu.js"></script>
+    <script src="js/contato.js"></script>
+
+</body>
+
+</html>

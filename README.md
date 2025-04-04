@@ -1,2 +1,2 @@
 # Projeto intergrador
-Deselvimento do site
+Desenvolvimento do site.

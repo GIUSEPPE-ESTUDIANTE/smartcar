@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Variaveis para a paleta de
+cores do site  */
+
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: black;
+    --cor-escura: black;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ececec;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    color: var(--cor-texto);
+    font-family: 'Noto sans', sans-serif;
+    background-color: var(--cor-clara);
+}
+
+/* CSS reset em alguns elementos */
+
+body,
+h1,
+h2,
+p,
+figure,
+.menu {
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-family: raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+h1 a {
+    color: var(--cor-clara);
+    background-color: var(--cor-escura);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header .limitador {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 12vh;
+
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--cor-clara);
+}
+
+
+/* Formataçâo da palavra menu */
+nav h2 a {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+nav h2 a:hover,
+nav h2 a:focus {
+    background-color: var(--cor-intermediaria);
+}
+
+/* Regra da lista ul de links */
+
+.menu {
+    list-style: none;
+
+    /* Usamos display: none para
+    nâo exibir inicialmente 
+    a lista de links.*/
+    display: none;
+}
+
+/* Regra para formatar os 
+links contidos na lista/menu */
+
+.menu a {
+    color: var(--cor-escura);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+
+
+}
+
+/* Seletor de classes combinadas 
+esta regra somente ira funcionar quando 
+AS DUAS CLASSES estiverem aplicadas juntas no
+elemento HTML(no caso, na lista de menu/links).
+
+Obs.: esta combinaçâo sera possivel por meio
+da manipulaçâo programada com JavaScripy*/
+.menu.aberto {
+
+    /* O Flex farà  a lista de links aparecer */
+    display: flex;
+
+    /* Com os links em forma de coluna(vertical) */
+    flex-direction: column;
+
+
+    /* Usamos as propriedades de posicionamento
+    e coordenadas para garantir o encaixe correto
+    (abaixo do titulo e da palavra menu.*/
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    background-color: var(--cor-clara);
+    /* Aplicamos um fundo à lista evitando a 
+    dificuldade de leitura dos links */
+}
+
+.destaque {
+
+    height: 85vh;
+    background-attachment: fixed;
+    background-image: url(../imagens/fundo-destaque.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.destaque h2,
+.destaque p {
+    text-align: center;
+    animation-name: animaDestaque;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 8rem);
+}
+
+.destaque p {
+    /* clamp(
+    tamanho mini,
+    tamanho ideal,
+    tamanho maximo
+     )*/
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: var(--cor-clara);
+    
+
+}
+
+
+
+/* Regra de animaçâo */
+@keyframes animaDestaque {
+    from {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+
+}
+
+
+article h2 {
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+}
+
+.front-end,
+.historia,
+.localizaçao {
+    text-align: center;
+}
+
+.article p {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+abbr {
+    text-decoration: underline solid;
+}
+
+address {
+    font-style: normal;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.historia h2 {
+    color: var(--cor-clara);
+    text-shadow: 0.1em 0.1em 0.2em var(--cor-intermediaria);
+}
+
+.historia iframe {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem;
+}
+
+.localizaçao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.limitador {
+
+    width: 95vw;
+    margin: auto;
+}
+
+footer {
+    padding: 50px 0px;
+    background-color: #343538;
+    font-size: 0.875em;
+    color: #fff;
+    text-align: center;
+
+
+}
+
+
+
+
+/* regra para as paginas Produtos, Serviços e contato */
+.conteudo{
+    background-color: var(--cor-intermediaria);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.conteudo h2 {
+    padding-left: 0;
+    font-size: 1.8rem;
+    border-bottom: solid 1px;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+}
+
+table, th, td {
+    border: solid 1px;
+    border-collapse:collapse ;
+}
+
+caption{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+}
+
+th {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    border-color: var(--cor-escura);
+    padding: 0.7rem;
+}
+
+td{ padding: 0.5rem;}
+
+td:nth-child(2) { text-align: center;}
+
+th:last-child, td:last-child {
+    text-align: right;
+}
+
+th:first-child{ text-align: left;}
+
+tr:nth-child(odd) {
+    background-color: var(--cor-clara);
+}
+
+/* Pseudo-elemento  ::before  (::after) */
+td:last-child{ position: relative;}
+
+td:last-child::before{ content: "R$" ;
+    position: absolute;
+    left: 10px;
+}
+
+.produtos::before{ content: "🤑 ";}
+.servicos::before { content: "😄 ";}
+.contato::before { content: '✋🏼';}
+
+.fotos {
+    margin: 0;
+    text-align: center;
+}
+
+.fotos img {
+    border-radius: 50px;
+    transition: 1s;
+    transform: scale(50%);
+    filter: blur(2px);
+}
+
+/*Aplicamos o :hover e o :focus ao seletor  */
+.fotos a:hover img, .fotos a:focus img {
+    transform: scale(100%);
+    border-radius: 0;
+    filter: blur(0);
+}
+
+form{
+    max-width: 500px;
+    margin: auto;
+    
+}
+
+input,select, textarea {
+    padding: 4px;
+    height: 40px;
+   
+    border-radius: 4px;
+}
+
+textarea { height: auto;}
+
+form div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+label  {
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 30%;
+    
+}
+ 
+/* Pseudo-classe :not()
+Permite criar exceçôes para uma regra.
+neste exemplo, estamos aplicando 70% de largura
+para tudo (*) dentro do '' form div '' EXCETO o "label */
+form div *:not(label) { width: 70%;}
+
+
+button {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    border: none;
+    font-weight: bold;
+    padding: 1rem 0.5rem ;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover, button:focus {
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    box-shadow: var(--cor-escura) 0 0 2px;
+
+}
+
+#cep { width: 60%; }
+#buscar{
+    width: 39%;
+    padding: 12px;
+}
+ 
+
+#status { font-size: 12px;};
+
+
+
+
+@media screen and (min-width: 570px) {
+
+    nav h2 {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        /* align-items: center;
+        justify-content: space-around;
+        width: 100%; */
+    
+    }
+
+
+    .menu li { width: 100%;}
+
+    nav {
+        width: 70%;
+    }
+
+    .front-end img {
+        height: 200px
+    }
+
+  
+}
+
+@media screen and (min-width:900px)   {
+
+    .text{
+        font-size: 18px;
+    }
+
+
+    .limitador{max-width: 900px;
+
+    }
+    
+
+
+
+
+
+}
+
+p  .justify{
+    text-align: justify;
+}
+
+
+
+
+
+
+
+

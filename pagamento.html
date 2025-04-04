@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <form id="pagamento-form" method="POST" action=" ">
+
+            <div class="row">
+                <div class="column">
+                    <h3 class="title">Informações</h3>
+                    
+                    <div class="input-box">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" placeholder="Coloque aqui" required autocomplete="name">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" placeholder="000.000.000-00" required maxlength="14">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="exemplo@gmail.com" required autocomplete="email">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" placeholder="Rua, número, bairro" required autocomplete="address-line1">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" placeholder="exemplo: São Paulo" required autocomplete="address-level2">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required autocomplete="address-level1">
+                          <option value="">Selecione</option>
+                          <option value="AC">Acre (AC)</option>
+                          <option value="AL">Alagoas (AL)</option>
+                          <option value="AP">Amapá (AP)</option>
+                          <option value="AM">Amazonas (AM)</option>
+                          <option value="BA">Bahia (BA)</option>
+                          <option value="CE">Ceará (CE)</option>
+                          <option value="DF">Distrito Federal (DF)</option>
+                          <option value="ES">Espírito Santo (ES)</option>
+                          <option value="GO">Goiás (GO)</option>
+                          <option value="MA">Maranhão (MA)</option>
+                          <option value="MT">Mato Grosso (MT)</option>
+                          <option value="MS">Mato Grosso do Sul (MS)</option>
+                          <option value="MG">Minas Gerais (MG)</option>
+                          <option value="PA">Pará (PA)</option>
+                          <option value="PB">Paraíba (PB)</option>
+                          <option value="PR">Paraná (PR)</option>
+                          <option value="PE">Pernambuco (PE)</option>
+                          <option value="PI">Piauí (PI)</option>
+                          <option value="RJ">Rio de Janeiro (RJ)</option>
+                          <option value="RN">Rio Grande do Norte (RN)</option>
+                          <option value="RS">Rio Grande do Sul (RS)</option>
+                          <option value="RO">Rondônia (RO)</option>
+                          <option value="RR">Roraima (RR)</option>
+                          <option value="SC">Santa Catarina (SC)</option>
+                          <option value="SP">São Paulo (SP)</option>
+                          <option value="SE">Sergipe (SE)</option>
+                          <option value="TO">Tocantins (TO)</option>
+                        </select>
+                      </div>
+                      
+
+                    <div class="input-box">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" placeholder="00000-000" required maxlength="9" autocomplete="postal-code">
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 class="title">Formas de Pagamento</h3>
+
+                    <div class="input-box">
+                        <span>Cartões aceitos:</span>
+                        <img src="imagens/formapagamento.png" alt="Cartões aceitos">
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="forma-pagamento">Escolha a forma de pagamento:</label>
+                        <select id="forma-pagamento" required>
+                            
+                            <option value="">Selecione</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="pix">Pix</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box" id="qrcode-container" style="display: none;">
+                        <label>Escaneie o QR Code do Pix:</label>
+                        <img src="imagens/qrcode_chrome.png" alt="QR Code Pix" style="width: 100px;">
+                      </div>
+
+                      <script>
+                        formulario.addEventListener("submit", function () {
+                        document.getElementById("formaPagamentoSelecionada").value = formaPagamento.value;
+                        });
+                      </script>
+
+                      
+                      
+
+
+                    <div class="input-box">
+                        <label for="numero-cartao">Número do Cartão:</label>
+                        <input type="text" id="numero-cartao" placeholder="0000-0000-0000-0000" required maxlength="19" autocomplete="cc-number">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="validade-mes">Validade:</label>
+                        <input type="text" id="validade-mes" placeholder="exemplo: Agosto" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data-prevista">Data Prevista de Entrega:</label>
+                        <input type="date" id="data-prevista" readonly>
+                    </div>
+                    
+                    <script>
+                        // Função para calcular a data de entrega (5 dias depois da data atual)
+                        function definirDataEntrega() {
+                            let hoje = new Date();
+                            hoje.setDate(hoje.getDate() + 5); // Adiciona 5 dias
+                    
+                            let ano = hoje.getFullYear();
+                            let mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Adiciona zero à esquerda se necessário
+                            let dia = String(hoje.getDate()).padStart(2, '0'); // Adiciona zero à esquerda se necessário
+                    
+                            let dataFormatada = `${ano}-${mes}-${dia}`;
+                            document.getElementById("data-prevista").value = dataFormatada;
+
+                            
+
+                            //alterar forma de pagamento via pix
+                            const formaPagamento = document.getElementById("forma-pagamento");
+                            const camposCartao = [
+                            document.getElementById("numero-cartao"),
+                            document.getElementById("validade-mes"),
+                            document.getElementById("cvv")
+                            ];
+                            const qrCodeContainer = document.getElementById("qrcode-container");
+
+                            formaPagamento.addEventListener("change", function () {
+                            if (formaPagamento.value === "pix") {
+                            camposCartao.forEach(campo => {
+                            campo.disabled = true;
+                            campo.parentElement.style.display = "none";
+                            });
+                            qrCodeContainer.style.display = "block";
+                            } else {
+                            camposCartao.forEach(campo => {
+                            campo.disabled = false;
+                            campo.parentElement.style.display = "block";
+                            });
+                            qrCodeContainer.style.display = "none";
+                            }
+                            });
+
+
+
+
+
+
+                        }
+                    
+                        // Chama a função assim que a página carregar
+                        window.onload = definirDataEntrega;
+                    </script>
+
+                    <div class="input-box">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" placeholder="exemplo: 456" required maxlength="3" autocomplete="cc-csc">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Finalizar Pagamento</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("cpf").addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            e.target.value = value;
+        });
+
+        document.getElementById("cep").addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+            e.target.value = value;
+        });
+
+        document.getElementById("numero-cartao").addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{4})(\d)/g, '$1 $2').trim();
+            e.target.value = value;
+        });
+
+        document.getElementById("pagamento-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
+
+            // Simulação de processamento do pagamento
+            setTimeout(() => {
+                alert("Pagamento realizado com sucesso!");
+                window.location.href = "index.html"; // Redireciona para a página do pedido(contato)
+            }, 1000);
+        });
+    </script>
+
+<script>
+    // Verifica se o usuário está logado e se há um pedido salvo
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    let pedidoAtual = JSON.parse(localStorage.getItem("pedidoAtual"));
+
+    if (!usuarioLogado) {
+        alert("Você precisa estar logado para acessar esta página!");
+        window.location.href = "login.html";
+    }
+
+    
+
+    function realizarPagamento() {
+        alert("Pagamento realizado com sucesso!");
+        window.location.href = "confirmacao.html"; // Vai para a página de confirmação do pedido
+    }
+</script>
+
+<h1>Página de Pagamento</h1>
+<button onclick="logout()">Sair</button>
+
+<script>
+    function logout() {
+        localStorage.removeItem("usuarioLogado");
+        localStorage.removeItem("pedidoAtual");
+        alert("Você saiu da conta!");
+        window.location.href = "login.html";
+    }
+
+    
+</script>
+
+</body>
+</html>
