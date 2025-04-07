@@ -7,6 +7,8 @@
     <title>Pedido</title>
 
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="imagens/site_designer.png" type="image/x-icon">
 
 
 
@@ -58,7 +60,7 @@
         <article class="limitador conteudo">
             <h2 class="contato">Pedido</h2>
             <p>Dados do Cliente</p>
-
+            
             <form action="https://formspree.io/f/mwkdyrbl" method="post" autocomplete="off">
                 <div>
                     <!-- Nome -->
@@ -76,11 +78,7 @@
 
                     <!-- data de nascimento -->
 
-                    <div>
-                        <label for="nascimento">Data de Nascimento</label>
-                        <input type="date" name="nascimento" id="nascimento">
-                    </div>
-
+                    
 
 
 
@@ -133,35 +131,27 @@
 
 
                     <!-- Criação da cores-->
-                    <div>
-                        <label for="cor">Escolhe cor</label>
-                        <select name="cor" id="cor">
-                           >
-                            <option value=""></option>
-                            <option>Preto</option>
-                            <option>Cinza</option>
-                            <option>Chumbo</option>
-                            <option>Amarelo</option>
-                            <option>Vermelho</option>
-                        </select>
-                    </div>
+                        <div>
+                            <label for="cor">Escolhe cor</label>
+                            <select name="cor" id="cor">
+                            
+                                <option value=""></option>
+                                <option>Preto</option>
+                                <option>Cinza</option>
+                                <option>Chumbo</option>
+                                <option>Amarelo</option>
+                                <option>Vermelho</option>
+                            </select>
+                        </div>
+                
+
+                        
+
+                        <button type="submit" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
+
+                    <!--<button type="button" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
+                    -->
                     
-            
-                    
-
-
-
-
-                    <div>
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
-
-                    </div> 
-
-                    
-
-                    <button type="button" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
-
 <script>
     function irParaPagamento() {
         window.location.href = "pagamento.html"; // Redireciona diretamente
