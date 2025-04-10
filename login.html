@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        
         <form id="loginForm">
             <div class="input-box">
                 <label for="email">Email:</label>
@@ -22,11 +22,35 @@
             </div>
             <button type="submit" class="btn">Entrar</button>
             <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <p><a href="#" id="esqueceuSenha">Esqueceu sua senha?</a></p>
+
         </form>
         
     </div>
 
     <script>
+//parte esqueceu a senha
+document.getElementById("esqueceuSenha").addEventListener("click", function (e) {
+    e.preventDefault();
+    
+    let emailRecuperacao = prompt("Digite seu e-mail para recuperar a senha:");
+    
+    if (!emailRecuperacao) {
+        alert("Por favor, informe um e-mail.");
+        return;
+    }
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    let usuario = usuarios.find(u => u.email === emailRecuperacao.trim());
+
+    if (usuario) {
+        alert(`Sua senha é: ${usuario.senha}`);
+    } else {
+        alert("E-mail não encontrado!");
+    }
+});
+
+
         document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
     
@@ -44,7 +68,7 @@
             if (usuario) {
                 localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
                 alert("Login realizado com sucesso!");
-                window.location.href = "contato.html"; // Redireciona para pagamento
+                window.location.href = "pedido.html"; // Redireciona para pagamento
             } else {
                 alert("Email ou senha incorretos!");
             }
@@ -52,7 +76,7 @@
     
         // Se o usuário já estiver logado, redireciona direto para a página de pagamento
         if (localStorage.getItem("usuarioLogado")) {
-            window.location.href = "contato.html";
+            window.location.href = "pedido.html";
         }
     </script>
 </body>

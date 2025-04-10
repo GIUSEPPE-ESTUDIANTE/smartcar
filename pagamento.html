@@ -9,203 +9,130 @@
     <link rel="shortcut icon" href="imagens/pagamento_icon2.png" type="image/x-icon">
 </head>
 <body>
-    
     <div class="container">
-        <form id="pagamento-form" method="POST" action=" ">
-
-            <div class="row">
-                <div class="column">
-                    <h3 class="title">Informações</h3>
-                    
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-
-                <div class="column">
-                    <h3 class="title">Formas de Pagamento</h3>
-
-                    <div class="input-box">
-                        <span>Cartões aceitos:</span>
-                        <img src="imagens/formapagamento.png" alt="Cartões aceitos">
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="forma-pagamento">Escolha a forma de pagamento:</label>
-                        <select id="forma-pagamento" required>
-                            
-                            <option value="">Selecione</option>
-                            <option value="cartao">Crédito</option>
-                            <option value="debito">Debito</option>
-                            <option value="pix">Pix</option>
-                        </select>
-                    </div>
-
-                    <div class="input-box" id="qrcode-container" style="display: none;">
-                        <label>Escaneie o QR Code do Pix:</label>
-                        <img src="imagens/qrcode_chrome.png" alt="QR Code Pix" style="width: 100px;">
-                      </div>
-
-                      <script>
-                        formulario.addEventListener("submit", function () {
-                        document.getElementById("formaPagamentoSelecionada").value = formaPagamento.value;
-                        });
-                      </script>
-
-                      
-                      
-
-
-                    <div class="input-box">
-                        <label for="numero-cartao">Número do Cartão:</label>
-                        <input type="text" id="numero-cartao" placeholder="0000-0000-0000-0000" required maxlength="19" autocomplete="cc-number">
-                    </div>
-
-                    <div class="input-box">
-                        <label for="validade-mes">Validade:</label>
-                        <input type="text" id="validade-mes" placeholder="exemplo: Agosto" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="data-prevista">Data Prevista de Entrega:</label>
-                        <input type="date" id="data-prevista" readonly>
-                    </div>
-                    
-                    <script>
-                        // Função para calcular a data de entrega (5 dias depois da data atual)
-                        function definirDataEntrega() {
-                            let hoje = new Date();
-                            hoje.setDate(hoje.getDate() + 5); // Adiciona 5 dias
-                    
-                            let ano = hoje.getFullYear();
-                            let mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Adiciona zero à esquerda se necessário
-                            let dia = String(hoje.getDate()).padStart(2, '0'); // Adiciona zero à esquerda se necessário
-                    
-                            let dataFormatada = `${ano}-${mes}-${dia}`;
-                            document.getElementById("data-prevista").value = dataFormatada;
-
-                            
-
-                            //alterar forma de pagamento via pix
-                            const formaPagamento = document.getElementById("forma-pagamento");
-                            const camposCartao = [
-                            document.getElementById("numero-cartao"),
-                            document.getElementById("validade-mes"),
-                            document.getElementById("cvv")
-                            ];
-                            const qrCodeContainer = document.getElementById("qrcode-container");
-
-                            formaPagamento.addEventListener("change", function () {
-                            if (formaPagamento.value === "pix") {
-                            camposCartao.forEach(campo => {
-                            campo.disabled = true;
-                            campo.parentElement.style.display = "none";
-                            });
-                            qrCodeContainer.style.display = "block";
-                            } else {
-                            camposCartao.forEach(campo => {
-                            campo.disabled = false;
-                            campo.parentElement.style.display = "block";
-                            });
-                            qrCodeContainer.style.display = "none";
-                            }
-                            });
-
-
-
-
-
-
-                        }
-                    
-                        // Chama a função assim que a página carregar
-                        window.onload = definirDataEntrega;
-                    </script>
-
-                    <div class="input-box">
-                        <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" placeholder="exemplo: 456" required maxlength="3" autocomplete="cc-csc">
-                    </div>
-                </div>
+        <form id="pagamento-form">
+            <div class="column">
+             <!-- <h3 class="title">Informações</h3>-->
+              <!-- Aqui você pode adicionar os campos de nome, endereço, etc. -->
             </div>
-            
-
-            <button type="submit" class="btn">Finalizar Pagamento</button>
-            <button onclick="logout()">Sair e Deslogar</button>
-
-<script>
-    function logout() {
-        localStorage.removeItem("usuarioLogado");
-        localStorage.removeItem("pedidoAtual");
-        alert("Você saiu da conta!");
-        window.location.href = "login.html";
-    }
-
     
-</script>
-            
+            <div class="column">
+              <h3 class="title">Formas de Pagamento</h3>
+    
+              <div class="input-box">
+                <span>Cartões aceitos:</span>
+                <img src="imagens/formapagamento.png" alt="Cartões aceitos" />
+              </div>
+    
+              <div class="input-box">
+                <label for="forma-pagamento">Escolha a forma de pagamento:</label>
+                <select id="forma-pagamento" required>
+                  <option value="">Selecione</option>
+                  <option value="cartao">Crédito</option>
+                  <option value="debito">Débito</option>
+                  <option value="pix">Pix</option>
+                </select>
+              </div>
+    
+              <div class="input-box" id="qrcode-container" style="display: none;">
+                <label>Escaneie o QR Code do Pix:</label>
+                <img src="imagens/qrcode_chrome.png" alt="QR Code Pix" style="width: 100px;" />
+              </div>
+    
+              <div class="input-box">
+                <label for="numero-cartao">Número do Cartão:</label>
+                <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" required maxlength="19" autocomplete="cc-number" />
+              </div>
+    
+              <div class="input-box">
+                <label for="validade-mes">Validade:</label>
+                <input type="text" id="validade-mes" placeholder="ex: Agosto" required />
+              </div>
+    
+              <div class="input-box">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="ex: 456" required maxlength="3" autocomplete="cc-csc" />
+              </div>
+    
+              <div class="input-box">
+                <label for="data-prevista">Data Prevista de Entrega:</label>
+                <input type="date" id="data-prevista" readonly />
+              </div>
+    
+              <button type="submit" class="btn btn-success mt-3">Finalizar Pagamento</button>
+              <button type="button" onclick="logout()" class="btn btn-danger mt-3">Sair e Deslogar</button>
+            </div>
+          </div>
         </form>
-    </div>
-
-    <script>
-        document.getElementById("cpf").addEventListener("input", function (e) {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-            e.target.value = value;
-        });
-
-        document.getElementById("cep").addEventListener("input", function (e) {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/^(\d{5})(\d)/, '$1-$2');
-            e.target.value = value;
-        });
-
-        document.getElementById("numero-cartao").addEventListener("input", function (e) {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/(\d{4})(\d)/g, '$1 $2').trim();
-            e.target.value = value;
-        });
-
-        document.getElementById("pagamento-form").addEventListener("submit", function (e) {
-            e.preventDefault(); // Impede o envio padrão do formulário
-
-            // Simulação de processamento do pagamento
-            setTimeout(() => {
-                alert("Pagamento realizado com sucesso!");
-                window.location.href = "index.html"; // Redireciona para a página do pedido(contato)
-            }, 1000);
-        });
-    </script>
-
-<script>
-    // Verifica se o usuário está logado e se há um pedido salvo
-    let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    let pedidoAtual = JSON.parse(localStorage.getItem("pedidoAtual"));
-
-    if (!usuarioLogado) {
-        alert("Você precisa estar logado para acessar esta página!");
-        window.location.href = "login.html";
-    }
-
+      </div>
     
+      <!-- Scripts -->
+      <script>
+        // Define data de entrega (5 dias após hoje)
+        window.onload = function () {
+          const hoje = new Date();
+          hoje.setDate(hoje.getDate() + 5);
+    
+          const ano = hoje.getFullYear();
+          const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+          const dia = String(hoje.getDate()).padStart(2, "0");
+    
+          document.getElementById("data-prevista").value = `${ano}-${mes}-${dia}`;
+        };
+    
+        // Alternar entre cartão e pix
+        document.getElementById("forma-pagamento").addEventListener("change", function () {
+          const tipo = this.value;
+          const camposCartao = ["numero-cartao", "validade-mes", "cvv"];
+          const qrCode = document.getElementById("qrcode-container");
+    
+          camposCartao.forEach(id => {
+            const campo = document.getElementById(id);
+            if (tipo === "pix") {
+              campo.disabled = true;
+              campo.parentElement.style.display = "none";
+              qrCode.style.display = "block";
+            } else {
+              campo.disabled = false;
+              campo.parentElement.style.display = "block";
+              qrCode.style.display = "none";
+            }
+          });
+        });
+    
+        // Máscara para número do cartão
+        document.getElementById("numero-cartao").addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\D/g, "").slice(0, 16);
+          value = value.replace(/(\d{4})(?=\d)/g, "$1 ");
+          e.target.value = value;
+        });
+    
+        // Botão de pagamento
+        document.getElementById("pagamento-form").addEventListener("submit", function (e) {
+          e.preventDefault(); // Impede envio
+    
+          alert("Pagamento realizado com sucesso!");
+          setTimeout(() => {
+            window.location.href = "index.html"; // Redireciona
+          }, 1000);
+        });
+    
+        // Botão logout
+        function logout() {
+          localStorage.removeItem("usuarioLogado");
+          localStorage.removeItem("pedidoAtual");
+          alert("Você saiu da conta!");
+          window.location.href = "login.html";
+        }
+    
+        // Verifica login
+        const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+        if (!usuarioLogado) {
+          alert("Você precisa estar logado para acessar esta página!");
+          window.location.href = "login.html";
+        }
+      </script>
 
-    function realizarPagamento() {
-        alert("Pagamento realizado com sucesso!");
-        window.location.href = "confirmacao.html"; // Vai para a página de confirmação do pedido
-    }
-</script>
 
 
 

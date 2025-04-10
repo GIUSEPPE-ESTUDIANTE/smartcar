@@ -1,0 +1,5 @@
+smart car sense: mais simples
+smart car versao obras: mais espaços para carregar materials , tijolo, ferro, etc.
+smart car plus: é o mais versatil, podendo ser usado tanto para obras quanto para escavações
+smart car exclusive: ele pra empresa maiores, rodas pouco mais enforçadas. ele tambem recebe painel solar para recarregar as 
+baterias durante sol.

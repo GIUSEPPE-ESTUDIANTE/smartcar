@@ -32,8 +32,8 @@
                     <li> <a href="index.html">Home</a></li>
                     <li> <a href="publico.html">Publico alvo</a></li>
                     <li> <a href="preco.html">Preços</a></li>
-                    <li> <a href="sobre.html">Produtos</a></li>
-                    <li> <a href="contato.html">Pedido</a></li>
+                    <li> <a href="produto.html">Produtos</a></li>
+                    <li> <a href="pedido.html">Pedido</a></li>
                     <li> <a href="duvida.html">Feedback</a></li>
                     <button onclick="logout()">Sair</button>
     
@@ -72,17 +72,7 @@
                 <!-- e-mail -->
                 <label for="e-mail">E-mail:</label>
                 <input type="email" name="email" id="email" required>
-            </div>
-
-                
-
-                    <!-- data de nascimento -->
-
-                    
-
-
-
-                    
+            </div>                  
 <div>
     <label for="cep">CEP: <br><span id="status"></span></label>
     <div id="area-do-cep">
@@ -122,10 +112,10 @@
                             <!-- Deixe um option vazio
                             de proposito -->
                             <option value=""></option>
-                            <option>Smartcar Sense</option>
-                            <option>SmartCar Versão Obras</option>
-                            <option>SmartCar Plus</option>
-                            <option>SmartCar Exclusive</option>
+                            <option>Smartcar Sense R$22.000,00</option>
+                            <option>SmartCar Versão Obras R$30.000,00</option>
+                            <option>SmartCar Plus R$ 50.000,00</option>
+                            <option>SmartCar Exclusive R$ 100.000,00</option>
                         </select>
                     </div>
 
@@ -149,8 +139,7 @@
 
                         <button type="submit" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
 
-                    <!--<button type="button" class="btn" onclick="irParaPagamento()">Confirmar Pedido</button>
-                    -->
+                    
                     
 <script>
     function irParaPagamento() {
@@ -223,7 +212,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
     <script src="js/menu.js"></script>
-    <script src="js/contato.js"></script>
+    <script src="js/pedido.js"></script>
+    
+
 
 </body>
 
