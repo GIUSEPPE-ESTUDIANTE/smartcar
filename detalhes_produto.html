@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+
+    <!-- Importando o CSS do Lightbox -->
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/vendas.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Importando o CSS do Bootstrap (se necessário) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="imagens/site_designer.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="limitador">
+            <h1><a href="index.html">Início</a></h1>
+            <nav>
+                <h2><a href="">Menu &equiv; </a></h2>
+                <ul class="menu">
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="publico.html">Público Alvo</a></li>
+                    <li> <a href="preco.html">Preços</a></li>
+                    <li> <a href="produto.html">Produtos</a></li>
+                    <li> <a href="pedido.html">Pedido</a></li>
+                    <li> <a href="duvida.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+
+        <div class="produto-detalhes">
+            <!-- Imagens do Produto com Lightbox -->
+            <section class="imagens-produto">
+                <div class="gallery">
+                    <a href="imagens/landworks.jpg" data-lightbox="produto" data-title="Carrinho Elétrico Landworks">
+                        <img src="imagens/landworks.jpg" alt="Landworks">
+                    </a>
+                    <a href="imagens/landworks2.jpg" data-lightbox="produto" data-title="Carrinho Elétrico Landworks">
+                        <img src="imagens/landworks2.jpg" alt="Landworks">
+                    </a>
+                    <a href="imagens/landworks3.jpg" data-lightbox="produto" data-title="Carrinho Elétrico Landworks">
+                        <img src="imagens/landworks3.jpg" alt="Landworks">
+                    </a>
+                    <a href="imagens/landworks4.jpg" data-lightbox="produto" data-title="Carrinho Elétrico Landworks">
+                        <img src="imagens/landworks4.jpg" alt="Landworks">
+                    </a>
+                </div>
+            </section>
+
+            <!-- Preço do Produto -->
+            <section class="preco-produto">
+                <h3>Preço</h3>
+                <p>Preço: <span class="preco">R$ 8.295,96</span></p>
+                <button class="finalizar-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+
+                <script>
+                     function finalizarCompra() {
+                    window.location.href = "pagamento.html";
+                }
+                </script>
+            </section>
+
+            <!-- Descrição do Produto -->
+            <section class="descricao-produto">
+                <h3>Descrição</h3>
+                <p>O <strong>Carrinho Elétrico Landworks</strong> é ideal para quem busca eficiência e praticidade no transporte de materiais pesados. Com um design robusto e capacidade de carga de até 500 libras, ele é perfeito para a construção civil, agricultura e jardinagem.</p>
+                <p>Com uma bateria de 48V DC e motor potente, oferece autonomia para longos períodos de uso, tornando as tarefas mais rápidas e menos cansativas.</p>
+            </section>
+
+            <!-- Características do Produto -->
+            <section class="caracteristicas-produto">
+                <h3>Características</h3>
+                <ul>
+                    <li><strong>Capacidade de Carga:</strong> 500 libras (cerca de 227 kg)</li>
+                    <li><strong>Tipo de Bateria:</strong> 48V DC</li>
+                    <li><strong>Autonomia:</strong> Até 7 horas de uso contínuo</li>
+                    <li><strong>Modos de Operação:</strong> Elétrico e Manual</li>
+                    <li><strong>Ideal para:</strong> Construção civil, jardinagem, agricultura</li>
+                </ul>
+            </section>
+
+            
+        </div>
+    </main>
+
+    <footer>
+        <div id="social">
+            <a href="https://www.youtube.com/" target="_blank"><img src="imagens/youtube.png" alt="youtube" /></a>
+            <a href="https://br.linkedin.com/" target="_blank"><img src="imagens/linkedin.png" alt="linkedin" /></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="imagens/facebook.png" alt="facebook" /></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="imagens/instagram.png" alt="instagram" /></a>
+            <a href="https://x.com/" target="_blank"><img src="imagens/twitter.png" alt="x" /></a><br>
+        </div>
+
+        <p>Automóveis é um site Projeto Educacional, para conhecimento sobre o carro e as suas origens. <br>
+            &copy;<b>Ana Beatriz de Brito Souza</b><br> 
+            &copy; <b>Giuseppe Costa Strapaicci</b><br> 
+            &copy; <b>Luan Zerbinatti Santos Fonseca</b><br>
+            &copy; <b>Paulo Sérgio Hernades Teles de Andrade</b><br> <time>2025</time></p>
+    </footer>
+
+   
+
+
+
+
+
+
+
+    <!-- importaçâo da biblioteca jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- importaçao do js do plugin/extensao lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
+    <script src="js/menu.js"></script>
+
+    <script>
+        // Função para adicionar o produto ao carrinho
+        function adicionarAoCarrinho(produto, preco) {
+            alert(`${produto} adicionado ao carrinho!`);
+            // Lógica para adicionar ao carrinho
+        }
+    </script>
+
+</body>
+
+</html>

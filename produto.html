@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-<!-- Importado o css do plugin Lightbox -->
+    <!-- Importado o css do plugin Lightbox -->
     <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/vendas.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--icons-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="shortcut icon" href="imagens/site_designer.png" type="image/x-icon">
 </head>
 
+<style>
+    
+</style>
 
 <body>
 
@@ -22,132 +27,154 @@
             <nav>
                 <h2><a href="">Menu &equiv; </a></h2>
                 <ul class="menu ">
-                    <li> <a href="index.html">Home</a></li>
-                    <li> <a href="publico.html">Publico alvo</a></li>
-                    <li> <a href="preco.html">Preços</a></li>
-                    <li> <a href="produto.html">Produtos</a></li>
-                    <li> <a href="pedido.html">Pedido</a></li>
-                    <li> <a href="duvida.html">Feedback</a></li>
-                    
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="publico.html">Publico alvo</a></li>
+                    <li><a href="preco.html">Preços</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="pedido.html">Pedido</a></li>
+                    <li><a href="duvida.html">Feedback</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
     <main>
         <article class="limitador conteudo">
             <h2 class="servicos">Produtos</h2>
-            <p>O carrinho mão elétrico é uma solução moderna 
-                e eficiente para facilitar o transporte de materiais, como construção civil, agricultura e jardinagem.  ele reduz significativamente o esforço físico do operador, tornando o trabalho mais ágil e produtivo.</p>
-           
-                <h2>Principais beneficios</h2>
-                <p>Menos esforço físico: Elimina a necessidade de empurrar manualmente materiais pesados.</p> <br>
+            <p>O carrinho mão elétrico é uma solução moderna e eficiente para facilitar o transporte de materiais, como construção civil, agricultura e jardinagem. Ele reduz significativamente o esforço físico do operador, tornando o trabalho mais ágil e produtivo.</p>
 
-                 <p>Maior eficiência: Permite transportar materiais com mais rapidez e segurança.</p><br>
+            <h2>Principais benefícios</h2>
+            <p>Menos esforço físico: Elimina a necessidade de empurrar manualmente materiais pesados.</p><br>
+            <p>Maior eficiência: Permite transportar materiais com mais rapidez e segurança.</p><br>
+            <p>Sustentabilidade: Funciona com bateria recarregável.</p><br>
+            <p>Versatilidade: Pode ser usado para carregar areia, cimento, tijolos, adubo, entre outros.</p><br>
 
-                  <p>Sustentabilidade: Funciona com bateria recarregável.</p><br>
+            <h2>Veículos</h2>
+            <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button>
 
-                    <p></p>Versatilidade: Pode ser usado para carregar areia, cimento, tijolos, adubo, entre outros. <br>
-                    
-                    <h2>Veiculos</h2>
+            <main class="container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <a data-lightbox="produto" href="imagens/landworks.jpg" data-title="Landworks - Carrinho Elétrico">
+                        <img src="imagens/landworks.jpg" alt="Landworks" class="imagem-produto">
+                    </a>
+                    <h2>Landworks</h2>
+                    <p class="price">R$8.295,96</p>
+                    <p>Carrinho elétrico com capacidade de 500 libras, bateria 48V DC.</p>
+                    <a href="detalhes_produto.html?produto=landworks" class="btn">Ver Detalhes</a>
+                    <button class="btn" onclick="adicionarAoCarrinho('Landworks', 8295.96)">Adicionar ao carrinho</button>
+                </div>
 
+                <!-- Card 2 -->
+                <div class="card">
+                    <a data-lightbox="produto" href="imagens/makita_areia.jpg" data-title="Makita - Carrinho Elétrico">
+                        <img src="imagens/makita_areia.jpg" alt="Makita" class="imagem-produto">
+                    </a>
+                    <h2>Makita</h2>
+                    <p class="price">R$8.295,96</p>
+                    <p>Modelo DCU180Z com luz LED, autonomia de 7km, carga 130kg.</p><br>
+                    <a href="detalhes_produto2.html?produto=makita" class="btn"> Ver Detalhes </a>
+                    <button class="btn" onclick="adicionarAoCarrinho('Makita DCU180Z', 8295.96)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <a data-lightbox="produto" href="imagens/dumper-jet_pedra.png" data-title="ZALLYS - Carrinho Elétrico">
+                        <img src="imagens/dumper-jet_pedra.png" alt="ZALLYS" class="imagem-produto">
+                    </a>
+                    <h2>ZALLYS</h2>
+                    <p class="price">R$7.000,00</p>
+                    <p>Modelo Dumper Jet com capacidade de 500Kg, ideal para rampas.</p>
+                    <a href="detalhes_produto.html?produto=zallys" class="btn">Ver Detalhes</a>
+                    <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper Jet', 7000)">Adicionar ao carrinho</button>
+                </div>
+            </main>
+
+            <!-- Modal do Carrinho -->
+            <div id="carrinhoModal">
+                <button class="fechar-btn" onclick="fecharCarrinho()">X</button>
+                <h2>Seu Carrinho</h2>
+                <div id="carrinhoItens"></div>
+                <p><strong>Total: R$ <span id="carrinhoTotal">0.00</span></strong></p>
+                <button class="finalizar-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+
+            <script>
+                let carrinho = [];
+
+                function adicionarAoCarrinho(produto, preco) {
+                    carrinho.push({ produto, preco });
+                    alert(`${produto} adicionado ao carrinho!`);
+                }
+
+                function abrirCarrinho() {
+                    const carrinhoItens = document.getElementById('carrinhoItens');
+                    const carrinhoTotal = document.getElementById('carrinhoTotal');
+                    carrinhoItens.innerHTML = "";
+
+                    let total = 0;
+                    carrinho.forEach((item, index) => {
+                        total += item.preco;
+                        carrinhoItens.innerHTML += `<p>${item.produto} - R$ ${item.preco.toFixed(2)} <button onclick="removerItem(${index})">Remover</button></p>`;
+                    });
+
+                    carrinhoTotal.innerText = total.toFixed(2);
+                    document.getElementById('carrinhoModal').style.display = 'flex';
+                }
+
+                function fecharCarrinho() {
+                    document.getElementById('carrinhoModal').style.display = 'none';
+                }
+
+                function removerItem(index) {
+                    carrinho.splice(index, 1);
+                    abrirCarrinho();
+                }
+
+                function finalizarCompra() {
+                    window.location.href = "pagamento.html";
+                }
+            </script>
+
+            <p>O carrinho elétrico é um investimento inteligente para quem busca aumentar a produtividade e minimizar o desgaste físico no trabalho diário. Com sua tecnologia inovadora, ele se torna um aliado indispensável para profissionais e empresas que lidam com transporte de materiais pesados.</p>
+
+            <h2>Tipo De Conexões</h2>
             <figure class="fotos">
-               <a data-title="carrinho de mão landworks " data-lightbox="fotos" href="./imagens/landworks.jpg" target="_blank"><img src="imagens/landworks.jpg" alt=""></a>
-
-               <a data-title="carrinho de mão makita DCU180Z" data-lightbox="fotos" href="./imagens/makita_cimento.jpg" target="_blank">
-                <img src="imagens/makita_cimento.jpg" alt=""></a>
-
-                <a data-title="carrinho de mão makita areia" data-lightbox="fotos" href="./imagens/makita_areia.jpg" target="_blank"><img src="imagens/makita_areia.jpg" alt=""></a>
-                <a data-title="carrinho de mão zallys pedras" data-lightbox="fotos" href="./imagens/dumper-jet_pedra.png" target="_blank"><img src="imagens/dumper-jet_pedra.png" alt=""></a>
-
-                
-
+                <div class="justify">
+                    <a data-title="carregador" data-lightbox="fotos" href="./imagens/carregador.png" target="_blank">
+                        <img src="imagens/carregador1.png" alt=""></a>
+                    <p>🔋 Baterias são recarregadas com carregador de 48V.</p><br>
+                    <p>⚙️ Modos de Operação – Pode ser usado no modo elétrico ou manualmente, adaptando-se às necessidades do usuário.</p><br>
+                    <p>Essa tecnologia torna o carrinho elétrico ainda mais versátil e eficiente, sendo perfeito para construção civil, agricultura, jardinagem e logística. Com ele, transportar materiais nunca foi tão fácil!</p><br>
+                </div>
             </figure>
-            
-            
-            
 
-            
-            
-
-            <p>O carrinho elétrico é um investimento inteligente para quem busca aumentar a produtividade e minimizar o desgaste físico no trabalho diário. 
-                Com sua tecnologia inovadora, ele se torna um aliado indispensável para profissionais e empresas que lidam com transporte de materiais 
-                pesados.</p>
-
-
-                <h2>Tipo De Conexões</h2>
-
-
-
-                <figure class="fotos">
-                    
-     
-                    
-
-
-                     <div class="justify">
-                        
-                        <a data-title="carregador" data-lightbox="fotos" href="./imagens/carregador.png" target="_blank">
-                            <img src="imagens/carregador1.png" alt=""></a>
-
-                        <p>🔋 Baterias são recarregadas com carregador de 48V.
-                        </p> <br>
-
-                        <p></p>
-                        
-                        <p>⚙️ Modos de Operação – Pode ser usado no modo eletrico ou manualmente, adaptando-se às necessidades do usuário.</p> <br>
-                        
-                        <p>Essa tecnologia torna o carrinho elétrico ainda mais versátil e eficiente, sendo perfeito para construção civil, agricultura, jardinagem e logística. Com ele, transportar materiais nunca foi tão fácil!</p> <br>
-     
-                    </div>
-     
-                 </figure>
         </article>
-        
-        
     </main>
 
     <footer>
-        <div id ="social">
-            <a href="https://www.youtube.com/" target="_blank"><img src="imagens/youtube.png" alt="youtube"/></a>
-            <a href="https://br.linkedin.com/?mcid=6821526239111716925&src=go-pa&trk=sem-ga_campid.12619604099_asid.149519181115_crid.725790844702_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.9196420&cid=&gad_source=1&gclid=Cj0KCQjwhr6_BhD4ARIsAH1YdjBJj7oe1TR3Jq5Kp2SmPQMWQveLjLj2agu_0HNhaha10Wcv45ry-t4aAkdUEALw_wcB&gclsrc=aw.ds" target="_blank"><img src="imagens/linkedin.png" alt="linkedin"/></a>
-            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><img src="imagens/facebook.png" alt="facebook"/></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="imagens/instagram.png" alt="instagram"/></a>
-            <a href="https://x.com/?lang=pt" target="_blank"><img src="imagens/twitter.png" alt="x"/></a><br>
+        <div id="social">
+            <a href="https://www.youtube.com/" target="_blank"><img src="imagens/youtube.png" alt="youtube" /></a>
+            <a href="https://br.linkedin.com/" target="_blank"><img src="imagens/linkedin.png" alt="linkedin" /></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="imagens/facebook.png" alt="facebook" /></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="imagens/instagram.png" alt="instagram" /></a>
+            <a href="https://x.com/" target="_blank"><img src="imagens/twitter.png" alt="x" /></a><br>
         </div>
-
-
-
-        <br><p>Automóveis é um site Projeto Educacional,
-            para conhecimento sobre o carro e as suas origens <br> <br> &copy;  
-            
-             <b>Ana Beatriz de Brito Souza</b><br>
-             &copy; <b>Giuseppe Costa Strapaicci</b><br>
-             &copy; <b>Luan Zerbinatti Santos Fonseca</b><br>
-            &copy; <b>Paulo Sérgio Hernades Teles de Andrade</b><br>
-           
-            
-             <time>2025</time> </p>
-
-
+        <br><p>Automóveis é um site Projeto Educacional,<br> para conhecimento sobre o carro e as suas origens <br> <br> &copy; <b>Ana Beatriz de Brito Souza</b><br>
+            &copy; <b>Giuseppe Costa Strapaicci</b><br>
+            &copy; <b>Luan Zerbinatti Santos Fonseca</b><br>
+            &copy; <b>Paulo Sérgio Hernades Teles de Andrade</b><br><time>2025</time></p>
     </footer>
 
-<!-- importaçâo da biblioteca jQuery -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
-<!-- importaçao do js do plugin/extensao lightbox -->
+    <!-- importaçâo da biblioteca jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- importaçao do js do plugin/extensao lightbox -->
     <script src="lightbox/js/lightbox.min.js"></script>
-
     <script src="js/menu.js"></script>
-
 
     <script>
         lightbox.option({
             albumLabel: "Foto %1 de %2"
-
         });
     </script>
 
