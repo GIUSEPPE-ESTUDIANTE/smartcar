@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/vendas.css">
     <link rel="stylesheet" href="css/style.css">
     <!--icons-->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   
     <link rel="shortcut icon" href="imagens/site_designer.png" type="image/x-icon">
 </head>
 
@@ -29,10 +29,9 @@
                 <ul class="menu ">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="publico.html">Publico alvo</a></li>
-                    <li><a href="preco.html">Preços</a></li>
                     <li><a href="produto.html">Produtos</a></li>
-                    <li><a href="pedido.html">Pedido</a></li>
                     <li><a href="duvida.html">Feedback</a></li>
+                    <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button>
                 </ul>
             </nav>
         </div>
@@ -50,12 +49,12 @@
             <p>Versatilidade: Pode ser usado para carregar areia, cimento, tijolos, adubo, entre outros.</p><br>
 
             <h2>Veículos</h2>
-            <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button>
+            
 
             <main class="container">
                 <!-- Card 1 -->
                 <div class="card">
-                    <a data-lightbox="produto" href="imagens/landworks.jpg" data-title="Landworks - Carrinho Elétrico">
+                    <a data-lightbox="produto" href="imagens/makita_areia.jpg" data-title="Landworks - Carrinho Elétrico">
                         <img src="imagens/landworks.jpg" alt="Landworks" class="imagem-produto">
                     </a>
                     <h2>Landworks</h2>
@@ -71,7 +70,7 @@
                         <img src="imagens/makita_areia.jpg" alt="Makita" class="imagem-produto">
                     </a>
                     <h2>Makita</h2>
-                    <p class="price">R$8.295,96</p>
+                    <p class="price">R$8.200,00</p>
                     <p>Modelo DCU180Z com luz LED, autonomia de 7km, carga 130kg.</p><br>
                     <a href="detalhes_produto2.html?produto=makita" class="btn"> Ver Detalhes </a>
                     <button class="btn" onclick="adicionarAoCarrinho('Makita DCU180Z', 8295.96)">Adicionar ao carrinho</button>
@@ -85,7 +84,19 @@
                     <h2>ZALLYS</h2>
                     <p class="price">R$7.000,00</p>
                     <p>Modelo Dumper Jet com capacidade de 500Kg, ideal para rampas.</p>
-                    <a href="detalhes_produto.html?produto=zallys" class="btn">Ver Detalhes</a>
+                    <a href="detalhes_produto3.html?produto=zallys" class="btn">Ver Detalhes</a>
+                    <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper Jet', 7000)">Adicionar ao carrinho</button>
+                </div>
+
+                <!--Card 4 -->
+                <div class="card">
+                    <a data-lightbox="produto" href="imagens/dcu180_1.png" data-title="ZALLYS - Carrinho Elétrico">
+                        <img src="imagens/dcu180_1.png" alt="ZALLYS" class="imagem-produto">
+                    </a>
+                    <h2>Makita</h2>
+                    <p class="price">R$5.850,00</p>
+                    <p>Carrinho Transporte Makita Dcu180.</p>
+                    <a href="detalhes_produto4.html?produto=zallys" class="btn">Ver Detalhes</a>
                     <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper Jet', 7000)">Adicionar ao carrinho</button>
                 </div>
             </main>
@@ -115,7 +126,7 @@
                     let total = 0;
                     carrinho.forEach((item, index) => {
                         total += item.preco;
-                        carrinhoItens.innerHTML += `<p>${item.produto} - R$ ${item.preco.toFixed(2)} <button onclick="removerItem(${index})">Remover</button></p>`;
+                        carrinhoItens.innerHTML += `<p>${item.produto} - R$ ${item.preco.toFixed(2)} <button onclick="removerItem(${index})">Remover</button></p><br>`;
                     });
 
                     carrinhoTotal.innerText = total.toFixed(2);
@@ -135,6 +146,8 @@
                     window.location.href = "pagamento.html";
                 }
             </script>
+
+            
 
             <p>O carrinho elétrico é um investimento inteligente para quem busca aumentar a produtividade e minimizar o desgaste físico no trabalho diário. Com sua tecnologia inovadora, ele se torna um aliado indispensável para profissionais e empresas que lidam com transporte de materiais pesados.</p>
 
