@@ -99,7 +99,7 @@ async function handleSubmit(event) {
         }
     }).then(response => {
         if (response.ok) {
-            status.innerHTML = "Thanks for your submission!";
+            status.innerHTML = "Obrigado pelo seu envio!";
             formulario.reset()
         } else {
             response.json().then(data => {
