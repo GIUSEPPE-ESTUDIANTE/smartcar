@@ -20,10 +20,10 @@
 </style>
 
 <body>
-
+    <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button>
     <header>
         <div class="limitador">
-            <h1><a href="index.html">Inicio</a></h1>
+            <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button></a></h1> 
             <nav>
                 <h2><a href="">Menu &equiv; </a></h2>
                 <ul class="menu ">
@@ -31,7 +31,7 @@
                     <li><a href="publico.html">Publico alvo</a></li>
                     <li><a href="produto.html">Produtos</a></li>
                     <li><a href="duvida.html">Feedback</a></li>
-                    <button class="abrirCarrinhoBtn" onclick="abrirCarrinho()">🛒 Carrinho</button>
+                    <li> <a href="criadores.html">Criadores</a></li>
                 </ul>
             </nav>
         </div>
@@ -62,6 +62,14 @@
                     <p>Carrinho elétrico com capacidade de 500 libras, bateria 48V DC.</p>
                     <a href="detalhes_produto.html?produto=landworks" class="btn">Ver Detalhes</a>
                     <button class="btn" onclick="adicionarAoCarrinho('Landworks', 8295.96)">Adicionar ao carrinho</button>
+                    <button class="finalizar-btn" onclick="finalizarCompra()">Compra Agora</button>
+
+                <script>
+                     function finalizarCompra() {
+                    window.location.href = "pedido.html";
+                }
+                </script>
+                
                 </div>
 
                 <!-- Card 2 -->
@@ -73,7 +81,15 @@
                     <p class="price">R$8.200,00</p>
                     <p>Modelo DCU180Z com luz LED, autonomia de 7km, carga 130kg.</p><br>
                     <a href="detalhes_produto2.html?produto=makita" class="btn"> Ver Detalhes </a>
-                    <button class="btn" onclick="adicionarAoCarrinho('Makita DCU180Z', 8295.96)">Adicionar ao carrinho</button>
+                    <button class="btn" onclick="adicionarAoCarrinho('Makita DCU180Z', 8200.00)">Adicionar ao carrinho</button>
+                    <button class="finalizar-btn" onclick="finalizarCompra()">Compra Agora</button>
+
+                <script>
+                     function finalizarCompra() {
+                    window.location.href = "pedido.html";
+                }
+                </script>
+                
                 </div>
 
                 <!-- Card 3 -->
@@ -85,8 +101,17 @@
                     <p class="price">R$7.000,00</p>
                     <p>Modelo Dumper Jet com capacidade de 500Kg, ideal para rampas.</p>
                     <a href="detalhes_produto3.html?produto=zallys" class="btn">Ver Detalhes</a>
-                    <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper Jet', 7000)">Adicionar ao carrinho</button>
+                    <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper jet', 7000.00)">Adicionar ao carrinho</button>
+                    <button class="finalizar-btn" onclick="finalizarCompra()">Compra Agora</button>
+
+                <script>
+                     function finalizarCompra() {
+                    window.location.href = "pedido.html";
+                }
+                </script>
+
                 </div>
+
 
                 <!--Card 4 -->
                 <div class="card">
@@ -97,7 +122,15 @@
                     <p class="price">R$5.850,00</p>
                     <p>Carrinho Transporte Makita Dcu180.</p>
                     <a href="detalhes_produto4.html?produto=zallys" class="btn">Ver Detalhes</a>
-                    <button class="btn" onclick="adicionarAoCarrinho('ZALLYS Dumper Jet', 7000)">Adicionar ao carrinho</button>
+                    <button class="btn" onclick="adicionarAoCarrinho('Makita DCU180', 5850.00)">Adicionar ao carrinho</button>
+                    <button class="finalizar-btn" onclick="finalizarCompra()">Compra Agora</button>
+
+                <script>
+                     function finalizarCompra() {
+                    window.location.href = "pedido.html";
+                }
+                </script>
+
                 </div>
             </main>
 

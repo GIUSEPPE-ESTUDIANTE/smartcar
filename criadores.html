@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criadores do Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/criadores.css">
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="limitador">
+      <h1><a href="index.html">Inicio</a></h1>
+      <nav>
+        <h2 id="toggle-menu">Menu &equiv;</h2>
+        <ul class="menu" id="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publico.html">Público alvo</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="duvida.html">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="section-title">Conheça os Criadores</h1>
+    <div class="creators">
+      <div class="card">
+        <img src="/imagens/ana_beatriz.png" alt="Ana Beatriz de Brito Souza">
+        <h2>Ana Beatriz de Brito Souza</h2>
+        <h3>Back-end e Banco dados.</h3>
+        
+        <div class="socials">
+          
+          <h3>Seguir a gente no github abaixo:</h3>
+          <a href="https://github.com/beatrizde"><i class="fab fa-github"></i></a>
+         
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagens/Giuseppe.jpg" alt="iuseppe Costa Strapaicci">
+        <h2>Giuseppe Costa Strapaicci</h2>
+        <h3>Front-end.</h3>
+        
+        <div class="socials">
+          
+          <h3>Seguir a gente no github abaixo:</h3>
+          <a href="https://github.com/GIUSEPPE-ESTUDIANTE"><i class="fab fa-github"></i></a>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagens/luan.jpg" alt="Luan Zerbinatti Santos Fonseca">
+        <h2>Luan Zerbinatti Santos Fonseca</h2>
+        <h3>Back-end e Front-end.</h3>
+        
+        <div class="socials">
+          
+          <h3>Seguir a gente no github abaixo:</h3>
+          <a href="https://github.com/luan-zerbinatti"><i class="fab fa-github"></i></a>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/imagens/paulo.png" alt="Paulo Sérgio Hernades Teles de Andrade">
+        <h2>Paulo Sérgio Hernades Teles de Andrade</h2>
+        <h3>Auxiliar Geral.</h3>
+        
+
+        <div class="socials">
+          <h3>Seguir a gente no github abaixo:</h3>
+          <a href="https://github.com/PauloHTAndrade"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Agradecemos sinceramente a todos que visitaram nosso site. <br>
+      Este projeto foi feito com dedicação por nossa equipe, pensando em entregar uma experiência útil, acessível e moderna.<br><br>
+      Esperamos que você tenha aproveitado a navegação. Obrigado pelo apoio! 💙
+    </p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('toggle-menu');
+    const menu = document.getElementById('menu-list');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
